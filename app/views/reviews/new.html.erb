@@ -1,0 +1,16 @@
+<h1>New Review</h1>
+
+<div class="mx-5">
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating, as: :range, input_html:{ min:"0", max:"5", oninput:"updateTextInput(this.value)"}%>
+  <input type="text" id="textInput" value="">
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+<script>
+function updateTextInput(val) {
+          document.getElementById('textInput').value=val;
+        }
+</script>

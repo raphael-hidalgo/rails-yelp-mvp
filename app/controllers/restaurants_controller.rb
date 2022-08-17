@@ -5,10 +5,14 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @review = Review.new
+    # redirect_to restaurant_reviews_path(@restaurant)
   end
 
   def new
     @restaurant = Restaurant.new
+    @review = Review.new
+    @review.restaurant = @restaurant
   end
 
   def create
