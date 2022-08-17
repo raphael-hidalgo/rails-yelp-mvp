@@ -1,0 +1,8 @@
+<div id="restaurants" class="mx-auto p-2 border my-2">
+  <% restaurants.each do |restaurant| %>
+    <%= render restaurant %>
+    <p>
+      <button class="btn border-primary m-3"><%= link_to "Show this restaurant", restaurant %></button>
+    </p>
+  <% end %>
+</div>
